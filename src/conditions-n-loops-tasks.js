@@ -88,8 +88,12 @@ function canQueenCaptureKing(/* queen, king */) {
  */
 function isIsoscelesTriangle(a, b, c) {
   if (a === 0 || b === 0 || c === 0) return false;
-  if (a === 2 && b === 2 && c === 5) return false;
-  if (a === b || a === c || b === c) return true;
+  if (
+    (a === b && a + b > c) ||
+    (a === c && a + c > b) ||
+    (b === c && b + c > a)
+  )
+    return true;
   return false;
 }
 
